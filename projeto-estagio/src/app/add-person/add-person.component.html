@@ -1,0 +1,44 @@
+<mat-toolbar class="toolbarH">
+    <span>Person Management</span>
+</mat-toolbar>
+
+<div fxLayoutAlign="center center" fxFlexFill class="main-div margem">
+    <mat-card fxFlex="60" class="rounded">
+        <mat-toolbar class="cardHeaderClass">Add new Person</mat-toolbar>
+        <form fxLayoutAlign="strech" fxLayout="column" class="addPerson-form" [formGroup]="formGroup"
+            (ngSubmit)="addPerson()">
+            <mat-form-field appearance="outline">
+                <input matInput placeholder="Username" formControlName="username">
+                <mat-label>Username</mat-label>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <input matInput type="password" placeholder="Password" formControlName="password">
+                <mat-label>Password</mat-label>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <input matInput placeholder="Name" formControlName="name">
+                <mat-label>Name</mat-label>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <input matInput type="number" formControlName="age">
+                <mat-label>Age</mat-label>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full">
+                <mat-select formControlName="role">
+                    <mat-option defualt value="admin">Normal</mat-option>
+                    <mat-option value="normal">Admin</mat-option>
+                </mat-select>
+                <mat-label>User Role</mat-label>
+            </mat-form-field>
+            <span>
+                <button mat-raised-button (click)="goToPersons()" class="cancelButton">Cancel</button>
+                <button mat-raised-button type="submit" class="submitButton">Add Person</button>
+            </span>
+        </form>
+
+    </mat-card>
+</div>

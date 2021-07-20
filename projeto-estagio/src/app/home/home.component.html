@@ -1,0 +1,23 @@
+<header>
+    <mat-toolbar color="primary">
+        <button mat-icon-button [routerLink]="['/']">
+            <h1>Projeto EMVENCI</h1>
+        </button>
+        <span class="example-spacer"></span>
+        <button mat-button [routerLink]="['/persons']">
+            Persons
+        </button>
+        <button mat-button [routerLink]="['/families']">
+            Families
+        </button>
+        <button mat-button matTooltip="Logout" (click)="logout()">
+            <mat-icon>power_settings_new</mat-icon>
+        </button>
+    </mat-toolbar>
+</header>
+
+<section>
+    <main class="container">
+        <router-outlet></router-outlet>
+    </main>
+</section>

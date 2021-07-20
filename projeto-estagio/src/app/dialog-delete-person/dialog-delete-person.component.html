@@ -1,0 +1,7 @@
+<h1 md-dialog-title>Confirm</h1>
+<div md-dialog-content>Are you sure you want to delete this person: {{data.person.name}}</div>
+
+<div mat-dialog-actions align="end">
+    <button mat-raised-button color='warn' (click)="dialogRef.close(false)">Cancel</button>
+    <button mat-raised-button color='accent' (click)="dialogRef.close(true)">Delete</button>
+</div>

@@ -1,0 +1,24 @@
+.inputStyle{
+    width: 100%;
+}
+
+
+::ng-deep snack-bar-container.custom-success {
+    background: #8BB8A8;
+  }
+  
+::ng-deep .custom-success .mat-simple-snackbar {
+    color: white;
+}
+
+::ng-deep snack-bar-container.custom-warn {
+background: #8f1010;
+}
+  
+::ng-deep .custom-warn .mat-simple-snackbar {
+color: white;
+}
+
+::ng-deep .custom-warn button  {
+    color: white;
+}

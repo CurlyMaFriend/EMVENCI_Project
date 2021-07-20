@@ -1,0 +1,83 @@
+table{
+    width: 80%;
+}
+
+.main-div{
+    padding-top: 3%;
+}
+
+.tableBorder{
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+.mat-header-cell {
+    background: #657092;
+    color: white;
+    font-size: medium;
+}
+
+.th-center{
+    text-align: center;
+}
+.th-left{
+    text-align: left;
+}
+.th-right{
+    text-align: right;
+}
+
+.back{
+    background-color: white;
+}
+
+button:disabled{
+    cursor: not-allowed;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.searchBar{
+    font-size: small;
+    width: 30%;
+    padding-right: 10%;
+}
+
+.padL{
+    padding-right: 10px;
+}
+
+.toolbarH{
+    height: 70%;
+    background-image: linear-gradient(#DFDFDF, white);
+}
+
+.editClass{
+    color: #151922;
+    padding-right: 20%;
+}
+
+
+::ng-deep snack-bar-container.custom-success {
+    background: #8BB8A8;
+  }
+  
+::ng-deep .custom-success .mat-simple-snackbar {
+    color: white;
+}
+
+::ng-deep snack-bar-container.custom-warn {
+background: #8f1010;
+}
+  
+::ng-deep .custom-warn .mat-simple-snackbar {
+color: white;
+}
+
+::ng-deep .custom-warn button  {
+    color: white;
+}

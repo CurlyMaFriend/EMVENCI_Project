@@ -1,0 +1,96 @@
+<mat-toolbar class="toolbarH">
+    <span>Families Management</span>
+</mat-toolbar>
+
+<div fxLayoutAlign="center center" fxFlexFill class="main-div margem">
+    <mat-card fxFlex="60" class="rounded">
+        <mat-toolbar class="cardHeaderClass">Add new Family</mat-toolbar>
+        <mat-stepper #stepper>
+            <mat-step [stepControl]="formGroup" errorMessage="Name is required.">
+                <form fxLayoutAlign="strech" fxLayout="column" class="addPerson-form" [formGroup]="formGroup">
+                    <ng-template matStepLabel>Family Data</ng-template>
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="Family Name" formControlName="name">
+                        <mat-label>Family Name</mat-label>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <input matInput type="number" placeholder="Max Persons" formControlName="max_persons">
+                        <mat-label>Max Persons</mat-label>
+                    </mat-form-field>
+                    <div>
+                        <button mat-raised-button matStepperNext color="primary" class=" 
+                        stepperButtonNext">
+                            Next <mat-icon>keyboard_arrow_right</mat-icon>
+                        </button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step errorMessage="Address is required.">
+                <ng-template matStepLabel>Persons in family</ng-template>
+                <mat-form-field class="searchBar">
+                    <input id="searchValue" (keyup)="applySearch()" matInput placeholder="Search Filter">
+                </mat-form-field>
+                <div class="container-flow mat-elevation-z1">
+                    <table mat-table [dataSource]="dataSource" matSort>
+                        <!-- Checkbox Column -->
+                        <ng-container matColumnDef="select">
+                            <th mat-header-cell *matHeaderCellDef>
+                                <mat-checkbox (change)="$event ? masterToggle() : null"
+                                    [checked]="selection.hasValue() && isAllSelected()"
+                                    [indeterminate]="selection.hasValue() && !isAllSelected()"
+                                    [aria-label]="checkboxLabel()">
+                                </mat-checkbox>
+                            </th>
+                            <td mat-cell *matCellDef="let row">
+                                <mat-checkbox (click)="$event.stopPropagation()"
+                                    (change)="$event ? selection.toggle(row) : null"
+                                    [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
+                                </mat-checkbox>
+                            </td>
+                        </ng-container>
+                        <!-- ID Column -->
+                        <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef> ID </th>
+                            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                        </ng-container>
+
+                        <!-- Username Column -->
+                        <ng-container matColumnDef="username">
+                            <th mat-header-cell *matHeaderCellDef> Name </th>
+                            <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+                        </ng-container>
+
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="name">
+                            <th mat-header-cell *matHeaderCellDef> Weight </th>
+                            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+                        </tr>
+                        <tr class="mat-row" *matNoDataRow>
+                            <td class="mat-cell" colspan="4">
+                                No data matching the filter
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="buttonDiv">
+                    <div fxFlex="50%">
+                        <button mat-raised-button matStepperPrevious color="warn" class="stepperButtonBack">
+                            <mat-icon>keyboard_arrow_left</mat-icon> Back
+                        </button>
+                    </div>
+                    <div fxFlex="50%">
+                        <button mat-raised-button matStepperPrevious color="accent" class="stepperButtonSubmit"
+                            (click)="showSelected()">
+                            <mat-icon>add</mat-icon> Add Family
+                        </button>
+                    </div>
+                </div>
+            </mat-step>
+        </mat-stepper>
+    </mat-card>
+</div>

@@ -1,0 +1,71 @@
+.main-div mat-card {
+    padding: 0px;
+}
+
+.addPerson-form {
+    padding: 1rem;
+}
+
+.full {
+    width: 100%;
+}
+
+.margem {
+    padding-top: 1rem;
+    width: 80%;
+}
+
+.toolbarH{
+    padding-top: .7rem;
+    height: 70%;
+    background-image: linear-gradient(#DFDFDF, white);
+}
+
+.cardHeaderClass{
+    background: #657092;
+    color: white;
+    border-top-left-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+}
+
+.rounded{
+    border-bottom-left-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+
+.submitButton{
+    background-color: #657092;
+    color: white;
+    width: 40%;
+    float: right;
+    font-size: medium;
+}
+
+.cancelButton{
+    background-color: #8f1010;
+    color: white;
+    width: 40%;
+    float: left;
+    font-size: medium;
+}
+
+
+::ng-deep snack-bar-container.custom-success {
+    background: #8BB8A8;
+  }
+  
+::ng-deep .custom-success .mat-simple-snackbar {
+    color: white;
+}
+
+::ng-deep snack-bar-container.custom-warn {
+background: #8f1010;
+}
+  
+::ng-deep .custom-warn .mat-simple-snackbar {
+color: white;
+}
+
+::ng-deep .custom-warn button  {
+    color: white;
+}

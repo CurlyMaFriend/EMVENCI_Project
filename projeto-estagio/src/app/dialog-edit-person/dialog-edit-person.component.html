@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Edit Person</h1>
+<form [formGroup]="formGroup" (ngSubmit)="editPerson()">
+    <div mat-dialog-content fxLayout="column" fxLayoutAlign="center center">
+        <mat-form-field appearance="outline" class="inputStyle">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="inputStyle">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="inputStyle">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full" class="inputStyle">
+            <mat-select formControlName="role">
+                <mat-option value="normal">Normal</mat-option>
+                <mat-option value="admin">Admin</mat-option>
+            </mat-select>
+            <mat-label>User Role</mat-label>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions align="end">
+        <button mat-raised-button mat-dialog-close color="warn">Cancel</button>
+        <button mat-raised-button cdkFocusInitial color="accent" type="submit">Save</button>
+    </div>
+</form>

@@ -1,0 +1,8 @@
+{
+    "/api/*": {
+        "target": "https://backend1.recruitment.cybersecurity.cloud",
+        "secure": true,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}
